@@ -27,4 +27,6 @@ This policy covers vulnerabilities in the Keelson codebase itself — the scanne
 
 ## Authorized Use
 
-Keelson is designed for **authorized security testing only**. Do not use Keelson against systems you do not have permission to test. Unauthorized use may violate applicable laws.
+Keelson is designed for **authorized security testing only**. You must have explicit written permission before testing any system you do not own. Unauthorized use may violate applicable laws including the Computer Fraud and Abuse Act (CFAA), the Computer Misuse Act 1990, EU Directive 2013/40/EU, and equivalent laws in other jurisdictions.
+
+The authors and contributors accept no liability for misuse of this software. See [LEGAL.md](LEGAL.md) for full terms, disclaimer of liability, indemnification obligations, and export compliance requirements.
