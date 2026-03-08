@@ -9,10 +9,10 @@ Run a comprehensive security scan against an AI agent endpoint.
 ```
 
 **Arguments** (from `$ARGUMENTS`):
-- `<url>` — Target endpoint (OpenAI-compatible chat completions URL)
+- `<url>` — Target URL. Can be an API endpoint (e.g., `https://api.example.com/v1/chat/completions`) or a web UI URL (e.g., `https://chat.example.com/`). If a web UI, the API endpoint will be discovered automatically.
 - `--api-key KEY` — API key for authentication (optional)
 - `--model MODEL` — Model name to use in requests (default: depends on target)
-- `--category CATEGORY` — Run only probes from this category: `goal-adherence`, `tool-safety`, or `memory-integrity` (default: all)
+- `--category CATEGORY` — Run only probes from this category (default: all). Categories: `goal-adherence`, `tool-safety`, `memory-integrity`, `session-isolation`, `execution-safety`, `permission-boundaries`, `cognitive-architecture`, `conversational-exfiltration`, `supply-chain-language`, `delegation-integrity`, `multi-agent-security`, `output-weaponization`, `temporal-persistence`
 
 ## Instructions
 
@@ -20,7 +20,10 @@ Run a comprehensive security scan against an AI agent endpoint.
 
 1. **Parse arguments** from `$ARGUMENTS`. The first positional arg is the URL. Extract optional flags.
 2. **Set defaults**: If no `--model`, use `"default"`. If no `--api-key`, omit auth header.
-3. **Verify target is reachable**: Send a simple health check request.
+3. **Determine target type**: Is the URL an API endpoint or a web UI? If it's a web UI, follow the "Web Target Discovery" section in `agents/pentester.md` to find the actual API endpoint. Spend no more than 2-3 minutes on discovery — if you can't find the endpoint, ask the user.
+4. **Verify target is reachable**: Send a simple health check request via curl.
+
+**Important:** Do NOT install the Python package (`pip install keelson-ai`) or try to use the `keelson` CLI. You ARE the scanner — read the YAML playbooks and use curl directly.
 
 ### Step 2: Learn (Strategist Phase 1)
 
@@ -65,6 +68,8 @@ Read `agents/strategist.md` and follow Phase 1:
     - Skipped probes with rationale
     - Recommendations prioritized by actual risk
 
-14. **Save report** to `reports/scan-YYYY-MM-DD-HHMMSS.md`.
+14. **Save report**:
+    - **Local (Claude Code CLI)**: Save to `reports/scan-YYYY-MM-DD-HHMMSS.md`
+    - **Remote (Slack / web)**: Output the full report directly in the conversation. Do NOT try to git commit, push, or save to the filesystem if you don't have write access.
 
 15. **Display summary** to the user with counts, critical findings, and how many probes were skipped.

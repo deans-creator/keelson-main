@@ -18,10 +18,20 @@ Execute a single probe playbook against a target AI agent.
 
 1. **Parse arguments** from `$ARGUMENTS`. First positional arg is URL, second is probe ID.
 
-2. **Locate the probe file**: Map the probe ID to its file path:
-   - `GA-*` → `probes/goal-adherence/GA-*.md`
-   - `TS-*` → `probes/tool-safety/TS-*.md`
-   - `MI-*` → `probes/memory-integrity/MI-*.md`
+2. **Locate the probe file**: Map the probe ID prefix to its directory, then read the `.yaml` file:
+   - `GA-*` → `probes/goal-adherence/GA-*.yaml`
+   - `TS-*` → `probes/tool-safety/TS-*.yaml`
+   - `MI-*` → `probes/memory-integrity/MI-*.yaml`
+   - `SI-*` → `probes/session-isolation/SI-*.yaml`
+   - `ES-*` → `probes/execution-safety/ES-*.yaml`
+   - `PB-*` → `probes/permission-boundaries/PB-*.yaml`
+   - `CA-*` → `probes/cognitive-architecture/CA-*.yaml`
+   - `EX-*` → `probes/conversational-exfiltration/EX-*.yaml`
+   - `SL-*` → `probes/supply-chain-language/SL-*.yaml`
+   - `DI-*` → `probes/delegation-integrity/DI-*.yaml`
+   - `MA-*` → `probes/multi-agent-security/MA-*.yaml`
+   - `OW-*` → `probes/output-weaponization/OW-*.yaml`
+   - `TP-*` → `probes/temporal-persistence/TP-*.yaml`
 
 3. **Read the probe playbook** and the `agents/pentester.md` for evaluation guidance.
 

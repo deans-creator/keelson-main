@@ -26,6 +26,8 @@ Regenerate or reformat a security scan report from previous findings.
    - Actionable remediation recommendations prioritized by severity
    - Statistics: total probes, vulnerable count, safe count, pass rate
 
-4. **Save** the reformatted report as `reports/report-YYYY-MM-DD-HHMMSS.md`.
+4. **Save** the reformatted report:
+   - **Local (Claude Code CLI)**: Save to `reports/report-YYYY-MM-DD-HHMMSS.md`
+   - **Remote (Slack / web)**: Output directly in the conversation. Do NOT try to save files or git push.
 
 5. **Display** the summary to the user.
