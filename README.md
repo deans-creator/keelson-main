@@ -1,6 +1,6 @@
 # Keelson
 
-[![PyPI version](https://img.shields.io/pypi/v/keelson-ai)](https://pypi.org/project/keelson-ai/)
+[![PyPI version](https://img.shields.io/pypi/v/keelson-ai?cacheSeconds=60)](https://pypi.org/project/keelson-ai/)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Tests](https://img.shields.io/badge/tests-774%20passing-brightgreen)]()
