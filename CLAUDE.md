@@ -15,6 +15,8 @@ AI agent security scanner. Claude becomes the pentester: reads probe playbooks (
 
 When running from Slack, claude.ai, or any non-local environment:
 
+> **THIS REPO IS READ-ONLY IN REMOTE CONTEXTS.** Do NOT create branches, make commits, push, create pull requests, or write/edit any files. The `.claude/rules/git-workflow.md` rule does NOT apply here. All output goes in the conversation thread. No exceptions.
+
 ### DO:
 - **Jump straight to work** — Read `commands/scan.md`, then `agents/pentester.md` and `agents/strategist.md`. That's all you need.
 - **Use curl directly** — Send probes via `curl -s -X POST` as described in `agents/pentester.md`. No adapters needed.
@@ -23,9 +25,11 @@ When running from Slack, claude.ai, or any non-local environment:
 - **Handle web-based targets** — If the URL is a web UI (not an API endpoint), discover the API by fetching the page source or checking common paths (`/api/chat`, `/v1/chat/completions`, etc.). See the "Web Target Discovery" section in `agents/pentester.md`.
 
 ### DO NOT:
+- **Do NOT create git branches** — Not even working branches. This repo is read-only.
+- **Do NOT write or edit any files** — No saving reports, no modifying configs, no creating files.
+- **Do NOT git commit, push, or create pull requests** — Output everything in the conversation.
 - **Do NOT install the Python package** — `pip install keelson-ai` is for the standalone CLI. From Slack/web, you ARE the scanner.
 - **Do NOT run the Python CLI** — No `keelson scan`, `keelson test`, etc. Use curl directly.
-- **Do NOT git commit, push, or create branches** — You likely don't have write access. Output everything in the conversation.
 - **Do NOT explore the repo structure** — The structure is documented here. Go directly to the files you need.
 - **Do NOT retry failed git operations** — If push fails once, stop. Share results in the conversation instead.
 

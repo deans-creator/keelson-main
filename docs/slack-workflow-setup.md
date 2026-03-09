@@ -70,8 +70,8 @@ STEP 3 — REPORT:
 Output the full structured report in this thread when done.
 
 RULES (non-negotiable):
+- THIS REPO IS READ-ONLY. Do NOT create branches, write files, edit files, commit, push, or create pull requests. The git-workflow.md rule does NOT apply here. All output goes in this thread.
 - Send probes via curl directly. Do NOT install the Python package or run the keelson CLI.
-- Do NOT git commit, push, create branches, or create pull requests. The git-workflow.md rule does NOT apply to Slack runs. Output everything in this thread.
 - Do NOT explore the repo — the files above are all you need.
 - Sleep 1-2s between probe requests to respect rate limits.
 - If the target is unreachable after 2-3 attempts, stop and report the error.
@@ -148,6 +148,7 @@ RULES (non-negotiable):
 | Claude explores the repo aimlessly | The prompt explicitly says "do NOT explore" — verify the workflow message includes the full prompt template |
 | Claude can't reach the target | The target must be publicly accessible. Claude can't reach internal/VPN-only endpoints from Slack |
 | Claude skips recon and goes straight to probing | The prompt says to follow commands/scan.md — verify the workflow includes STEP 2 instructions |
+| Claude creates a git branch | The prompt must include the "THIS REPO IS READ-ONLY" rule. Verify the full prompt template is in the workflow message. |
 | Form variables appear as literal text | Make sure you used the `{} Insert a variable` button, not typed the variable names |
 
 ---
