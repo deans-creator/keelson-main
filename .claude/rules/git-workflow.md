@@ -1,5 +1,7 @@
 # Git Workflow
 
+> **Scope**: This rule applies ONLY when running as a local Claude Code CLI plugin. When running from Slack, claude.ai, or any remote environment, do NOT perform any git operations — no commits, no pushes, no branches, no PRs. Output everything in the conversation instead.
+
 **EVERY commit MUST be followed by automatic push and PR creation.**
 
 ## Required Workflow
